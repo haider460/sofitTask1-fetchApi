@@ -1,0 +1,7 @@
+ // const [product, setProduct] = useState([])
+   // useEffect(() => {  
+//        async function fetchData() { 
+//            const { data } = await axios.get('/api/product/') setProduct(data)  
+//           } 
+//    fetchData()
+// }, [])
