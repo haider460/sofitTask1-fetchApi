@@ -13,7 +13,6 @@ function App() {
             <div className="main_container">
                 <Routes>
                     <Route path="/" element={<HomeScreen />} />
-                    {/* <Route path="/searchData" element={<Search />} /> */}
                     <Route
                         path="/viewDetail/:id"
                         element={<EmployeeDetails />}

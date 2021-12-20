@@ -19,7 +19,6 @@ function HomeScrean() {
     const navigate = useNavigate();
     const { data, loading } = useSelector((state) => state.getData);
     const { searchData } = useSelector((state) => state.searchData);
-    console.log(".....", searchData);
 
     useEffect(() => {
         dispatch(getDataAction());
