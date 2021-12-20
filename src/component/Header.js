@@ -16,8 +16,11 @@ function Header() {
     };
 
     const handleKeyDown = (value) => {
+        console.log("**** in keyDown function", value);
         dispatch(searchDataActions(value));
+
         setInputData("");
+        setSugestions([]);
     };
     const handleSpecificElement = (e) => {
         dispatch(searchDataActions(e));
@@ -37,33 +40,30 @@ function Header() {
                         Navbar
                     </a>
                     <div className="search">
-                        <form class="">
-                            <input
-                                onKeyDown={(e) =>
-                                    e.key === "Enter" &&
-                                    handleKeyDown(inputData)
-                                }
-                                class="form-control me-2 inputFeild"
-                                type="search"
-                                placeholder="Search"
-                                value={inputData}
-                                aria-label="Search"
-                                onChange={(e) => handleChange(e.target.value)}
-                            />
-                            <ul class="list-group">
-                                {sugestions?.length > 0 &&
-                                    sugestions?.map((data) => (
-                                        <li
-                                            class="list-group-item item"
-                                            onClick={() =>
-                                                handleSpecificElement(data.name)
-                                            }
-                                        >
-                                            {data.name}
-                                        </li>
-                                    ))}
-                            </ul>
-                        </form>
+                        <input
+                            onKeyDown={(e) =>
+                                e.key === "Enter" && handleKeyDown(inputData)
+                            }
+                            class="form-control me-2 inputFeild"
+                            type="search"
+                            placeholder="Search"
+                            value={inputData}
+                            aria-label="Search"
+                            onChange={(e) => handleChange(e.target.value)}
+                        />
+                        <ul class="list-group">
+                            {sugestions?.length > 0 &&
+                                sugestions?.map((data) => (
+                                    <li
+                                        class="list-group-item item"
+                                        onClick={() =>
+                                            handleSpecificElement(data.name)
+                                        }
+                                    >
+                                        {data.name}
+                                    </li>
+                                ))}
+                        </ul>
                     </div>
                 </div>
             </nav>

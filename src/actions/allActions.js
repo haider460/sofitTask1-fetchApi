@@ -68,7 +68,6 @@ export const sugestDataActions = (inputID) => async (dispatch) => {
             `https://api.openbrewerydb.org/breweries/search?query=${inputID}`,
             config
         );
-      
 
         dispatch(
             sugeSliceAction.successReducer({
